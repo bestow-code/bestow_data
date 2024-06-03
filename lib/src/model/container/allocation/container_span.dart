@@ -6,8 +6,17 @@ abstract interface class ContainerSpan {
   ContainerAllocation get allocation;
 
   ///
-  ContainerSize get containerSize;
+  ContainerKind get kind;
 
   ///
-  int get spanLength;
+  ContainerSize get size;
+
+  ///
+  int get idx;
+
+  ///
+  int get length;
+
+  ///
+  List<Container> get containers;
 }

@@ -10,7 +10,7 @@ abstract interface class ContainerAllocation {
   ContainerKind get kind;
 
   ///
-  int get start;
+  int get startIndex;
 
   ///
   List<ContainerSpan> get spans;
