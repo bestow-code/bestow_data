@@ -1,0 +1,34 @@
+syntax = 'proto3';
+
+package bestow.alpha.container.v1;
+
+//
+service ContainerService {
+  //
+  rpc ListAvailable(ListAvailableRequest) returns (ListAvailableResponse);
+
+  //
+  rpc GetMany(GetManyRequest) returns (GetManyResponse);
+}
+
+//
+message ListAvailableRequest {}
+
+enum Status {
+  UNSPECIFIED = 0;
+  AVAILABLE = 1;
+  NEXT_AVAILABLE = 2;
+  RECENTLY_CLOSED = 3;
+
+}
+//
+message ListAvailableResponse {
+  string container_id = 1;
+  optional string assigned_container_id = 2;
+}
+
+//
+message GetManyRequest {}
+
+//
+message GetManyResponse {}

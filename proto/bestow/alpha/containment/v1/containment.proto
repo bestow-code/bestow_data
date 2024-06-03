@@ -1,0 +1,38 @@
+syntax = 'proto3';
+
+package bestow.alpha.container.v1;
+
+//
+service ContainmentService {
+  //
+  rpc GetContentCount(GetContentCountRequest) returns (GetContentCountResponse);
+  //
+  rpc Assign(AssignmentRequest) returns (AssignmentResponse);
+}
+
+//
+message AssignmentRequest {}
+
+//
+message AssignmentResponse {}
+
+//
+message GetContentCountRequest {}
+
+//
+message GetContentCountResponse {}
+
+//
+message ListAllOpenRequest {}
+
+//
+message ListAllOpenResponse {
+  string container_id = 1;
+  optional string assigned_container_id = 2;
+}
+
+//
+message AssignContainer {
+  bool close_container = 2;
+  optional AssignContainer assign = 3;
+}

@@ -4,9 +4,31 @@ version: 0.1.0+1
 publish_to: none
 
 environment:
-  sdk: "^3.3.0"
+  sdk: "^3.4.0-282.3.beta"
+
+dependencies:
+  fpdart:
+    git:
+      url: https://github.com/SandroMaglione/fpdart
+      ref: effect-refactor
+      path: packages/fpdart
+  meta:
+  path: ^1.9.0
 
 dev_dependencies:
-  mocktail: ^1.0.3
-  test: ^1.25.2
+  build_runner: ^2.4.9
   very_good_analysis: ^5.1.0
+
+index_generator:
+  exclude:
+    - '**.g.dart'
+  # Define the paths of the folders in which to generate the index files
+  indexes:
+    - path: lib
+      name: bestow_data_model
+      include:
+        - src/model
+    - name: bestow_data_model_base
+      path: lib
+      include:
+        - src/model_base

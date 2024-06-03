@@ -1,0 +1,40 @@
+syntax = 'proto3';
+
+package bestow.alpha.intake.v1;
+
+//
+service IntakeService {
+  //
+  rpc Add(AddRequest) returns (AddResponse);
+  //
+  rpc List(ListRequest) returns (ListResponse);
+  //
+  rpc GetMany(GetManyRequest) returns (GetManyResponse);
+}
+
+//
+message ListRequest {}
+
+//
+message ListResponse {}
+
+//
+message AddRequest {
+  //
+  string item_id = 1;
+  //
+  string image_id = 2;
+}
+
+//
+message AddResponse {}
+
+/*
+   GetMany
+*/
+
+//
+message GetManyRequest {}
+
+//
+message GetManyResponse {}
